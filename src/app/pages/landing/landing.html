@@ -1,0 +1,157 @@
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- HERO                                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero__glow"></div>
+  <div class="container hero__inner">
+    <span class="hero__badge">Transformación empresarial integral</span>
+    <h1 class="hero__title">
+      Tu empresa no necesita más recursos.<br>
+      <span class="hero__title--accent">Necesita otro contexto.</span>
+    </h1>
+    <p class="hero__subtitle">
+      Combinamos cambio de creencias, optimización de procesos e inteligencia
+      artificial para que tu negocio escale con claridad, eficiencia y
+      automatización.
+    </p>
+    <div class="hero__actions">
+      <a href="#fases" class="btn btn--primary">Ver cómo funciona</a>
+      <a href="#contacto" class="btn btn--ghost">Hablar con nosotros</a>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PHASES                                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="fases" class="phases">
+  <div class="container">
+    <div class="phases__header">
+      <span class="section-tag">Metodología</span>
+      <h2 class="section-title">3 fases para transformar tu negocio</h2>
+      <p class="section-subtitle">
+        Un proceso secuencial donde cada fase potencia la siguiente.
+        Sin atajos. Sin improvisación.
+      </p>
+    </div>
+
+    <div class="phases__timeline">
+      @for (phase of phases(); track phase.number) {
+        <article class="phase-card" [style.--phase-color]="phase.color">
+          <div class="phase-card__number">
+            <span>{{ phase.number }}</span>
+          </div>
+          <div class="phase-card__content">
+            <div class="phase-card__icon">
+              <svg
+                class="phase-card__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563EB" />
+                    <stop offset="100%" stop-color="#22D3EE" />
+                  </linearGradient>
+                </defs>
+                @switch (phase.number) {
+                  @case (1) {
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                    <line x1="12" y1="2" x2="12" y2="6" />
+                    <line x1="12" y1="18" x2="12" y2="22" />
+                    <line x1="2" y1="12" x2="6" y2="12" />
+                    <line x1="18" y1="12" x2="22" y2="12" />
+                  }
+                  @case (2) {
+                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+                  }
+                  @case (3) {
+                    <path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2v4a4 4 0 0 0 8 0v-4h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z" />
+                    <line x1="9" y1="10" x2="15" y2="10" />
+                    <line x1="12" y1="7" x2="12" y2="13" />
+                    <circle cx="9" cy="18" r="0.5" fill="currentColor" stroke="none" />
+                    <circle cx="15" cy="18" r="0.5" fill="currentColor" stroke="none" />
+                    <path d="M8 22h8" stroke-dasharray="2 2" />
+                  }
+                }
+              </svg>
+            </div>
+            <h3 class="phase-card__title">{{ phase.title }}</h3>
+            <p class="phase-card__description">{{ phase.description }}</p>
+          </div>
+          <div class="phase-card__line" [style.background]="phase.color"></div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- WHY CONTEXT                                               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="why">
+  <div class="container why__inner">
+    <div class="why__text">
+      <span class="section-tag">Diferencia</span>
+      <h2 class="section-title">¿Por qué Context?</h2>
+      <p class="why__description">
+        La mayoría de consultoras te venden soluciones parciales. Nosotros
+        atacamos el problema desde su origen: la mentalidad del líder, la
+        eficiencia operativa y la automatización inteligente. Las tres juntas.
+        En orden. Sin cortar camino.
+      </p>
+      <div class="why__stats">
+        <div class="why__stat">
+          <span class="why__stat-number">3</span>
+          <span class="why__stat-label">Fases integradas</span>
+        </div>
+        <div class="why__stat">
+          <span class="why__stat-number">0</span>
+          <span class="why__stat-label">Gasto adicional requerido</span>
+        </div>
+        <div class="why__stat">
+          <span class="why__stat-number">∞</span>
+          <span class="why__stat-label">Potencial de escala</span>
+        </div>
+      </div>
+    </div>
+    <div class="why__visual">
+      <div class="why__circle why__circle--1"></div>
+      <div class="why__circle why__circle--2"></div>
+      <div class="why__circle why__circle--3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- CTA                                                       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="contacto" class="cta">
+  <div class="container cta__inner">
+    <div class="cta__glow"></div>
+    <h2 class="cta__title">¿Listo para cambiar el contexto?</h2>
+    <p class="cta__subtitle">
+      Agendá un diagnóstico sin compromiso. En 30 minutos identificamos
+      dónde está la mayor oportunidad de transformación en tu negocio.
+    </p>
+    <a
+      href="mailto:contacto@context.com"
+      class="btn btn--primary btn--large"
+    >
+      Agendar diagnóstico gratuito
+    </a>
+  </div>
+</section>

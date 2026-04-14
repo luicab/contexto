@@ -1,0 +1,38 @@
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- NAVBAR                                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="container navbar__inner">
+    <a routerLink="/" class="navbar__logo">
+      <span class="navbar__logo-mark">C</span>
+      <span class="navbar__logo-text">Context</span>
+    </a>
+    <a href="/#contacto" class="navbar__cta">Agendar diagnóstico</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROUTER                                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<router-outlet />
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="navbar__logo-mark">C</span>
+      <span>Context</span>
+    </div>
+    <nav class="footer__links">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/recursos">Recursos</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <p class="footer__copy">
+      &copy; {{ currentYear }} Context. Transformación empresarial desde la
+      raíz.
+    </p>
+  </div>
+</footer>

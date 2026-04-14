@@ -1,0 +1,125 @@
+// ═══════════════════════════════════════════════════════════════
+// BUTTONS
+// ═══════════════════════════════════════════════════════════════
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  border: none;
+  text-decoration: none;
+
+  &--primary {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 0 0 0 var(--color-accent-glow);
+
+    &:hover {
+      background: #7c6df0;
+      box-shadow: 0 0 30px 4px var(--color-accent-glow);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ABC MATRIX
+// ═══════════════════════════════════════════════════════════════
+$cell-gap: 8px;
+
+.abc {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 20px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding: 0 var(--container-padding);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.15;
+  }
+
+  // ─── Grid ────────────────────────────────────────────────
+  // gap filas (entre divs) = $cell-gap
+  // gap spans (entre letter/label) = $cell-gap
+  // gap columnas (entre celdas) = separación horizontal
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: $cell-gap;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $cell-gap;
+    padding: 0 4px;
+  }
+
+  // ─── Letras del abecedario ──────────────────────────────
+  &__letter {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  // ─── Indicadores I/J/D — MISMO estilo que las letras ────
+  &__label {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// RESPONSIVE
+// ═══════════════════════════════════════════════════════════════
+@media (max-width: 600px) {
+  .abc__grid {
+    max-width: 100%;
+  }
+
+  .abc__cell {
+    padding: 4px 2px;
+  }
+}
